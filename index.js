@@ -1,12 +1,14 @@
-import config from './config.js';
+import config from './config.json';
 
 export default {
-  async fetch() {
+  async fetch(request) {
+      return new Response(JSON.stringify({
+        allowed: !!config.packages[pkg]
+      }), {
+        headers: { "Content-Type": "application/json" }
+      });
+    }
     return new Response(JSON.stringify(config), {
-      headers: {
-        "Content-Type": "application/json",
-        "Cache-Control": "no-store"
-      }
+      headers: { "Content-Type": "application/json" }
     });
-  }
 };
