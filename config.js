@@ -1,6 +1,0 @@
-export default {
-  packages: {
-    "com.qrcode.qrscanner.barcodescanner.reader": true,
-    "com.qrcodescanner.qrscanner.barcodescanner": true
-  }
-};
