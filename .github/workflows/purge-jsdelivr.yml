@@ -1,0 +1,19 @@
+name: Purge jsDelivr Cache
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'package.json'   # chỉ trigger khi file này thay đổi
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Purge jsDelivr cache
+        run: |
+          echo "Purging jsDelivr cache..."
+          curl -X GET "https://purge.jsdelivr.net/gh/heaven-std/ads-config-v2/package.json"
+          echo "Done!"
