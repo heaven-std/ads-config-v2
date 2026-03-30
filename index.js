@@ -1,21 +1,12 @@
-import config from './config.json';
+import config from './config.js';
 
 export default {
-  async fetch(request) {
-
-    const url = new URL(request.url);
-    const pkg = url.searchParams.get("pkg");
-
-    if (pkg) {
-      return new Response(JSON.stringify({
-        allowed: !!config.packages[pkg]
-      }), {
-        headers: { "Content-Type": "application/json" }
-      });
-    }
-
+  async fetch() {
     return new Response(JSON.stringify(config), {
-      headers: { "Content-Type": "application/json" }
+      headers: {
+        "Content-Type": "application/json",
+        "Cache-Control": "no-store"
+      }
     });
   }
 };
