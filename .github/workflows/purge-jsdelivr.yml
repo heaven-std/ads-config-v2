@@ -5,15 +5,28 @@ on:
     branches:
       - main
     paths:
-      - 'package.json'   # chỉ trigger khi file này thay đổi
+      - 'package.json'
 
 jobs:
   purge:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Purge jsDelivr cache
+      - name: Purge jsDelivr cache with retry
         run: |
-          echo "Purging jsDelivr cache..."
-          curl -X GET "https://purge.jsdelivr.net/gh/heaven-std/ads-config-v2/package.json"
-          echo "Done!"
+          for i in {1..3}
+          do
+            echo "Attempt $i..."
+            response=$(curl -s -o /dev/null -w "%{http_code}" "https://purge.jsdelivr.net/gh/heaven-std/ads-config-v2/package.json")
+
+            if [ "$response" = "200" ]; then
+              echo "Purge success"
+              exit 0
+            fi
+
+            echo "Retrying..."
+            sleep 2
+          done
+
+          echo "Purge failed"
+          exit 1
