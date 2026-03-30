@@ -1,12 +1,5 @@
 {
   "packages": {
-    "com.qrcode.qrscanner.barcodescanner.reader": true,
-    "com.qrcodescanner.qrscanner.barcodescanner": true,
-    "com.zipperlock.lockscreen.wallpaper.locker": true,
-    "com.pregnancy.tracker.healofy.babycenter": true,
-    "com.family.pregnancy.calendar": true,
-    "com.clicker.autoclicker.automatictap.tapassistant": true,
-    "com.screenmirrorapp.casttotv.screenmirroring": true,
     "f0e50e850a984f7e3b5f9bf6718a805e": true,
     "b5757f32b07fbe20201b8646a15cdb83": true,
     "5109a12037930811e35dfe0367fd6f39": true,
