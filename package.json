@@ -4,7 +4,6 @@
     "com.qrcodescanner.qrscanner.barcodescanner": true,
      "com.zipperlock.lockscreen.wallpaper.locker": true,
     "com.pregnancy.tracker.healofy.babycenter": true,
-    "com.family.pregnancy.calendar": true,
-    "com.clicker.autoclicker.automatictap.tapassistant": true
+    "com.family.pregnancy.calendar": true
   }
 }
