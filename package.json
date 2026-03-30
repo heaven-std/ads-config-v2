@@ -1,8 +1,10 @@
 {
-  "packages": {
-    "com.qrcode.qrscanner.barcodescanner.reader": true,
-    "com.qrcodescanner.qrscanner.barcodescanner": true,
-     "com.zipperlock.lockscreen.wallpaper.locker": true,
-    "com.pregnancy.tracker.healofy.babycenter": true
+  "name": "ads-config-v2",
+  "version": "1.0.0",
+  "scripts": {
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
   }
 }
